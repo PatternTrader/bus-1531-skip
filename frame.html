@@ -29,10 +29,10 @@ html,body{margin:0;background:transparent}
 </svg><div class="num"><span class="lb">STOP</span><span class="n" id="n"></span></div></div>
 </div></div>
 <script>
-// ?n=23&f=0..9 ; 10 frames x 0.2s: letters light 1-by-1, hold, flash off/on/off/on
+// ?n=23&f=0..9 ; 10 frames x 0.2s: flash, spell S-K-I-P, hold. Starts and ends fully lit, since WhatsApp pauses loops after a few seconds
 const p=new URLSearchParams(location.search),f=+p.get("f");
 document.getElementById("n").textContent=p.get("n");
-const LIT=[[1,0,0,0],[1,1,0,0],[1,1,1,0],[1,1,1,1],[1,1,1,1],[0,0,0,0],[1,1,1,1],[0,0,0,0],[1,1,1,1],[1,1,1,1]][f];
+const LIT=[[1,1,1,1],[0,0,0,0],[1,1,1,1],[0,0,0,0],[1,1,1,1],[1,0,0,0],[1,1,0,0],[1,1,1,0],[1,1,1,1],[1,1,1,1]][f];
 document.querySelectorAll(".sk i").forEach((e,i)=>e.style.opacity=LIT[i]?1:.25);
 document.documentElement.style.setProperty("--bx",f%2?"calc(512px*.0275)":"0px");
 </script>

@@ -27,7 +27,9 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
 .btns a:nth-child(1){background:var(--red);color:var(--red-fg)}
 .how{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;max-width:65ch}
 .how h2{font-family:var(--display);font-size:22px;margin:0 0 8px}
-.how p{margin:0}
+.how p{margin:0 0 10px}
+.fine{font-size:14px;color:var(--muted)}
+.fine a{color:inherit}
 .steps{margin:0 0 20px;padding-left:22px;max-width:60ch;font-size:18px}
 .steps li{margin-bottom:6px}
 </style>
@@ -41,11 +43,11 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
     <li>Tap it, then tap <b>Add to Favorites</b>. You only do this once.</li>
     <li>To skip: open the sticker panel, tap the <b>&#9733;</b> tab, tap your sticker. Done.</li>
   </ol>
-  <a class="all" href="stickers/bus-1531-skip-stickers.zip" download>Download all 11 (zip)</a>
   <div class="grid" id="grid"></div>
   <section class="how">
-    <h2>Downloads</h2>
-    <p><b>WebP sticker</b>: the real WhatsApp sticker, for sticker-maker apps. <b>Video</b>: send it from your phone and tap <b>GIF</b> before sending so it loops. <b>GIF</b>: for anywhere else (WhatsApp shows GIF files as a still picture). The zip has everything plus a 96&times;96 tray icon for making a sticker pack.</p>
+    <h2>Sending the download</h2>
+    <p>It's a short video. In WhatsApp on your phone, attach it from <b>Photos &amp; videos</b>, tap <b>GIF</b> at the top, then send. It plays by itself, no tap needed.</p>
+    <p class="fine">Making the sticker pack? <a href="stickers/bus-1531-skip-stickers.zip" download>All files (zip)</a> has the WebP stickers and tray icon.</p>
   </section>
 </div>
 <script>
@@ -54,11 +56,7 @@ document.getElementById("grid").innerHTML=STOPS.map(n=>`
   <div class="st">
     <img src="stickers/skip-${n}.gif" width="512" height="512" alt="Flashing SKIP sticker for stop ${n}" loading="lazy">
     <h2>Stop ${n}</h2>
-    <div class="btns">
-      <a href="stickers/skip-${n}.webp" download>Download sticker</a>
-      <a href="stickers/skip-${n}.mp4" download>Download video</a>
-      <a href="stickers/skip-${n}.gif" download>Download GIF</a>
-    </div>
+    <div class="btns"><a href="stickers/skip-${n}.mp4" download="skip-${n}.mp4">Download</a></div>
   </div>`).join("");
 </script>
 </body>

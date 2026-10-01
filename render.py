@@ -16,8 +16,6 @@ for n in STOPS:
                         "--virtual-time-budget=4000", f"--screenshot={png}",
                         f"file://{HERE}/frame.html?n={n}&f={f}"], check=True, capture_output=True)
         imgs.append(Image.open(png).convert("RGBA"))
-    # start on a fully lit frame, so any app that shows only frame 1 still reads SKIP
-    imgs = imgs[3:] + imgs[:3]
     # MP4: WhatsApp plays short silent videos as looping GIFs (GIF files often arrive as stills)
     for i, im in enumerate(imgs * 2):
         bg = Image.new("RGB", im.size, "white"); bg.paste(im, mask=im); bg.save(tmp / f"v{n}-{i:02d}.png")
