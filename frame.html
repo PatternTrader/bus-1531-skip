@@ -1,0 +1,38 @@
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap">
+<style>
+html,body{margin:0;background:transparent}
+:root{--s:512px;--red:#d7262e;--ink:#121212}
+.tile{width:var(--s);height:var(--s);position:relative}
+.card{position:absolute;inset:6px;background:#fff;border:calc(var(--s)*.035) solid var(--red);border-radius:calc(var(--s)*.08);display:grid;grid-template-rows:48% 1fr;overflow:hidden}
+.hd{position:relative;background:#a3121a;color:#fff;display:flex;align-items:center;justify-content:center}
+.hd::before{content:"";position:absolute;inset:calc(var(--s)*.012);background:radial-gradient(circle,#ffe14d 0 30%,transparent 36%) var(--bx) 0/calc(var(--s)*.055) calc(var(--s)*.055)}
+.hd::after{content:"";position:absolute;inset:calc(var(--s)*.067);background:var(--red);border-radius:calc(var(--s)*.02)}
+.sk{position:relative;z-index:1;font-family:"Archivo Black";font-size:calc(var(--s)*.22);line-height:1;white-space:nowrap;text-shadow:0 0 calc(var(--s)*.03) #ffe14d}
+.sk i{font-style:normal;display:inline-block}
+.bd{background:#fff;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:2%;padding:0 6%}
+.bus{width:calc(var(--s)*.4);height:calc(var(--s)*.4)}
+.num{display:grid;justify-items:center;line-height:.9;font-family:"Archivo Black";color:var(--ink)}
+.lb{font-size:calc(var(--s)*.08)}.n{font-size:calc(var(--s)*.28)}
+</style>
+<div class="tile" id="t"><div class="card">
+<div class="hd"><span class="sk"><i>S</i><i>K</i><i>I</i><i>P</i></span></div>
+<div class="bd"><svg class="bus" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="44" fill="#fff6d6"/>
+<rect x="28" y="18" width="44" height="58" rx="8" fill="#f7b500" stroke="#222" stroke-width="3"/>
+<rect x="40" y="22" width="20" height="5" rx="1" fill="#222"/>
+<rect x="33" y="30" width="34" height="20" rx="3" fill="#bfe3ff" stroke="#222" stroke-width="2.5"/>
+<circle cx="37" cy="62" r="4.5" fill="#fff" stroke="#222" stroke-width="2"/><circle cx="63" cy="62" r="4.5" fill="#fff" stroke="#222" stroke-width="2"/>
+<rect x="44" y="58" width="12" height="8" rx="1" fill="#222"/><rect x="25" y="72" width="50" height="6" rx="2" fill="#222"/>
+<rect x="31" y="78" width="8" height="8" rx="2" fill="#222"/><rect x="61" y="78" width="8" height="8" rx="2" fill="#222"/>
+<circle cx="50" cy="50" r="44" fill="none" stroke="#d7262e" stroke-width="9"/><line x1="19" y1="19" x2="81" y2="81" stroke="#d7262e" stroke-width="9"/>
+</svg><div class="num"><span class="lb">STOP</span><span class="n" id="n"></span></div></div>
+</div></div>
+<script>
+// ?n=23&f=0..9 ; 10 frames x 0.2s: letters light 1-by-1, hold, flash off/on/off/on
+const p=new URLSearchParams(location.search),f=+p.get("f");
+document.getElementById("n").textContent=p.get("n");
+const LIT=[[1,0,0,0],[1,1,0,0],[1,1,1,0],[1,1,1,1],[1,1,1,1],[0,0,0,0],[1,1,1,1],[0,0,0,0],[1,1,1,1],[1,1,1,1]][f];
+document.querySelectorAll(".sk i").forEach((e,i)=>e.style.opacity=LIT[i]?1:.25);
+document.documentElement.style.setProperty("--bx",f%2?"calc(512px*.0275)":"0px");
+</script>

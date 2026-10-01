@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bus 1531 Skip Stickers</title>
+<meta name="description" content="Flashing SKIP stickers for every AM bus 1531 stop. Tap your stop to download.">
+<link rel="icon" href="stickers/skip-23.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#f4f1ec;--fg:#1b1d22;--muted:#5d6370;--card:#fff;--line:#ddd6cc;--red:#d7262e;--red-fg:#fff;
+  --display:"Archivo Black",Impact,sans-serif;--body:"Atkinson Hyperlegible",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171b;--fg:#eceef2;--muted:#9aa1ad;--card:#1f2228;--line:#30343c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15171b;--fg:#eceef2;--muted:#9aa1ad;--card:#1f2228;--line:#30343c;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 64px}
+h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;margin:0 0 10px;text-wrap:balance}
+.lead{margin:0 0 20px;color:var(--muted);max-width:60ch}
+.all{display:inline-block;background:var(--red);color:var(--red-fg);font-weight:700;text-decoration:none;padding:10px 16px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:28px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:10px}
+.st img{width:100%;height:auto;aspect-ratio:1;display:block}
+.st h2{margin:0;font:700 18px/1.2 var(--body)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btns a{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:9px 6px;border-radius:9px;border:2px solid var(--red);color:var(--red)}
+.btns a:first-child{background:var(--red);color:var(--red-fg)}
+.how{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;max-width:65ch}
+.how h2{font-family:var(--display);font-size:22px;margin:0 0 8px}
+.how ol{padding-left:22px;margin:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Bus 1531 SKIP stickers</h1>
+  <p class="lead">Nobody from your stop riding the AM bus? Send your stop's sticker in the group so the driver knows to skip it. Find your stop, tap <b>GIF</b> to save it.</p>
+  <a class="all" href="stickers/bus-1531-skip-stickers.zip" download>Download all 11 (zip)</a>
+  <div class="grid" id="grid"></div>
+  <section class="how">
+    <h2>How to use it</h2>
+    <ol>
+      <li>Tap <b>GIF</b> under your stop. It saves to your phone.</li>
+      <li>In the bus group, attach it from your photos and send.</li>
+      <li><b>WebP</b> is the same sticker in WhatsApp's sticker format, for sticker-maker apps.</li>
+    </ol>
+  </section>
+</div>
+<script>
+const STOPS=["93","84","82","59","55","51","41","36","23","16","12"];
+document.getElementById("grid").innerHTML=STOPS.map(n=>`
+  <div class="st">
+    <img src="stickers/skip-${n}.gif" width="512" height="512" alt="Flashing SKIP sticker for stop ${n}" loading="lazy">
+    <h2>Stop ${n}</h2>
+    <div class="btns">
+      <a href="stickers/skip-${n}.gif" download>GIF</a>
+      <a href="stickers/skip-${n}.webp" download>WebP</a>
+    </div>
+  </div>`).join("");
+</script>
+</body>
+</html>
