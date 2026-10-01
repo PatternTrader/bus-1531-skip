@@ -24,7 +24,7 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
 .st h2{margin:0;font:700 18px/1.2 var(--body)}
 .btns{display:grid;gap:8px}
 .btns a{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:9px 6px;border-radius:9px;border:2px solid var(--red);color:var(--red)}
-.btns a:first-child{background:var(--red);color:var(--red-fg)}
+.btns a:nth-child(1){background:var(--red);color:var(--red-fg)}
 .how{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;max-width:65ch}
 .how h2{font-family:var(--display);font-size:22px;margin:0 0 8px}
 .how ol{padding-left:22px;margin:0}
@@ -33,14 +33,16 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
 <body>
 <div class="wrap">
   <h1>Bus 1531 SKIP stickers</h1>
-  <p class="lead">Nobody from your stop riding the AM bus? Send your stop's sticker in the group so the driver knows to skip it. Find your stop, tap <b>Download GIF</b> to save it.</p>
+  <p class="lead">Nobody from your stop riding the AM bus? Send your stop's sticker in the group so the driver knows to skip it. Find your stop, tap <b>Download (for WhatsApp)</b> to save it.</p>
   <a class="all" href="stickers/bus-1531-skip-stickers.zip" download>Download all 11 (zip)</a>
   <div class="grid" id="grid"></div>
   <section class="how">
     <h2>How to use it</h2>
     <ol>
-      <li>Tap <b>Download GIF</b> under your stop. It saves to your phone.</li>
-      <li>In the bus group, attach it from your photos and send.</li>
+      <li>Tap <b>Download (for WhatsApp)</b> under your stop. It saves a short video to your phone.</li>
+      <li>In the bus group, tap attach &rarr; <b>Photos &amp; videos</b> and pick it.</li>
+      <li>Before sending, tap <b>GIF</b> at the top so it loops on its own. Then send.</li>
+      <li>Next time: in the chat, long-press it and star it, so it's easy to find.</li>
       <li><b>WebP</b> is the same sticker in WhatsApp's sticker format, for sticker-maker apps.</li>
     </ol>
   </section>
@@ -52,6 +54,7 @@ document.getElementById("grid").innerHTML=STOPS.map(n=>`
     <img src="stickers/skip-${n}.gif" width="512" height="512" alt="Flashing SKIP sticker for stop ${n}" loading="lazy">
     <h2>Stop ${n}</h2>
     <div class="btns">
+      <a href="stickers/skip-${n}.mp4" download>Download (for WhatsApp)</a>
       <a href="stickers/skip-${n}.gif" download>Download GIF</a>
       <a href="stickers/skip-${n}.webp" download>Download WebP sticker</a>
     </div>
