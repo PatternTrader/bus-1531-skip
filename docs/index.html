@@ -46,7 +46,7 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
   <div class="grid" id="grid"></div>
   <section class="how">
     <h2>Sending the download</h2>
-    <p>It's a short video. In WhatsApp on your phone, attach it from <b>Photos &amp; videos</b>, tap <b>GIF</b> at the top, then send. It plays by itself, no tap needed.</p>
+    <p>It's a GIF. In WhatsApp on your phone, attach it from <b>Photos &amp; videos</b> and send. It shows up with <b>GIF</b> in the middle and loops.</p>
     <p class="fine">Making the sticker pack? <a href="stickers/bus-1531-skip-stickers.zip" download>All files (zip)</a> has the WebP stickers and tray icon.</p>
   </section>
 </div>
@@ -56,7 +56,7 @@ document.getElementById("grid").innerHTML=STOPS.map(n=>`
   <div class="st">
     <img src="stickers/skip-${n}.gif" width="512" height="512" alt="Flashing SKIP sticker for stop ${n}" loading="lazy">
     <h2>Stop ${n}</h2>
-    <div class="btns"><a href="stickers/skip-${n}.mp4" download="skip-${n}.mp4">Download</a></div>
+    <div class="btns"><a href="stickers/skip-${n}.gif" download="skip-${n}.gif">Download</a></div>
   </div>`).join("");
 </script>
 </body>
