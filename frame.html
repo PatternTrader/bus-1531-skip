@@ -4,7 +4,7 @@
 html,body{margin:0;background:transparent}
 :root{--s:512px;--red:#d7262e;--ink:#121212}
 .tile{width:var(--s);height:var(--s);position:relative}
-.card{position:absolute;inset:6px;background:#fff;border:calc(var(--s)*.035) solid var(--red);border-radius:calc(var(--s)*.08);display:grid;grid-template-rows:48% 1fr;overflow:hidden}
+.card{position:absolute;inset:16px;background:#fff;border:calc(var(--s)*.035) solid var(--red);border-radius:calc(var(--s)*.08);display:grid;grid-template-rows:48% 1fr;overflow:hidden}
 .hd{position:relative;background:#a3121a;color:#fff;display:flex;align-items:center;justify-content:center}
 .hd::before{content:"";position:absolute;inset:calc(var(--s)*.012);background:radial-gradient(circle,#ffe14d 0 30%,transparent 36%) var(--bx) 0/calc(var(--s)*.055) calc(var(--s)*.055)}
 .hd::after{content:"";position:absolute;inset:calc(var(--s)*.067);background:var(--red);border-radius:calc(var(--s)*.02)}

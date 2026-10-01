@@ -27,24 +27,25 @@ h1{font-family:var(--display);font-size:clamp(30px,6vw,52px);line-height:1.02;ma
 .btns a:nth-child(1){background:var(--red);color:var(--red-fg)}
 .how{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;max-width:65ch}
 .how h2{font-family:var(--display);font-size:22px;margin:0 0 8px}
-.how ol{padding-left:22px;margin:0}
+.how p{margin:0}
+.steps{margin:0 0 20px;padding-left:22px;max-width:60ch;font-size:18px}
+.steps li{margin-bottom:6px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Bus 1531 SKIP stickers</h1>
-  <p class="lead">Nobody from your stop riding the AM bus? Send your stop's sticker in the group so the driver knows to skip it. Find your stop, tap <b>Download (for WhatsApp)</b> to save it.</p>
+  <p class="lead">Nobody from your stop riding the AM bus? Send your stop's flashing SKIP sticker in the group.</p>
+  <ol class="steps">
+    <li>Find your stop's sticker in the bus group. All 11 are posted there.</li>
+    <li>Tap it, then tap <b>Add to Favorites</b>. You only do this once.</li>
+    <li>To skip: open the sticker panel, tap the <b>&#9733;</b> tab, tap your sticker. Done.</li>
+  </ol>
   <a class="all" href="stickers/bus-1531-skip-stickers.zip" download>Download all 11 (zip)</a>
   <div class="grid" id="grid"></div>
   <section class="how">
-    <h2>How to use it</h2>
-    <ol>
-      <li>Tap <b>Download (for WhatsApp)</b> under your stop. It saves a short video to your phone.</li>
-      <li>In the bus group, tap attach &rarr; <b>Photos &amp; videos</b> and pick it.</li>
-      <li>Before sending, tap <b>GIF</b> at the top so it loops on its own. Then send.</li>
-      <li>Next time: in the chat, long-press it and star it, so it's easy to find.</li>
-      <li><b>WebP</b> is the same sticker in WhatsApp's sticker format, for sticker-maker apps.</li>
-    </ol>
+    <h2>Downloads</h2>
+    <p><b>WebP sticker</b>: the real WhatsApp sticker, for sticker-maker apps. <b>Video</b>: send it from your phone and tap <b>GIF</b> before sending so it loops. <b>GIF</b>: for anywhere else (WhatsApp shows GIF files as a still picture). The zip has everything plus a 96&times;96 tray icon for making a sticker pack.</p>
   </section>
 </div>
 <script>
@@ -54,9 +55,9 @@ document.getElementById("grid").innerHTML=STOPS.map(n=>`
     <img src="stickers/skip-${n}.gif" width="512" height="512" alt="Flashing SKIP sticker for stop ${n}" loading="lazy">
     <h2>Stop ${n}</h2>
     <div class="btns">
-      <a href="stickers/skip-${n}.mp4" download>Download (for WhatsApp)</a>
+      <a href="stickers/skip-${n}.webp" download>Download sticker</a>
+      <a href="stickers/skip-${n}.mp4" download>Download video</a>
       <a href="stickers/skip-${n}.gif" download>Download GIF</a>
-      <a href="stickers/skip-${n}.webp" download>Download WebP sticker</a>
     </div>
   </div>`).join("");
 </script>
